@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -10,13 +9,15 @@ import Footer from '../components/Footer';
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="bg-white">
       <Header />
-      <Hero />
-      <Discover />
-      <Featured />
-      <Writers />
-      <CTA />
+      <main>
+        <Hero />
+        <Discover />
+        <Featured />
+        <Writers />
+        <CTA />
+      </main>
       <Footer />
     </div>
   );

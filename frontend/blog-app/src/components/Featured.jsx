@@ -25,7 +25,7 @@ const featuredArticles = [
 		likes: 42,
 		comments: 15,
 		image:
-			'https://images.unsplash.com/photo-1620712943543-2858200e944a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+			'https://images.unsplash.com/photo-1558655146-364adaf1fcc9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
 	},
 	{
 		title: 'Design Systems: A Complete Guide for 2024',
@@ -42,19 +42,19 @@ const featuredArticles = [
 
 const Featured = () => {
 	return (
-		<section className="bg-gray-50 py-16">
+		<section className="bg-white py-16">
 			<div className="container mx-auto px-4">
-				<h2 className="text-3xl font-bold text-center">
+				<h2 className="text-4xl font-bold text-center text-slate-900">
 					Featured Articles
 				</h2>
-				<p className="text-center text-gray-500 mt-2">
+				<p className="text-center text-slate-600 mt-2 mb-12">
 					Hand-picked stories from our community
 				</p>
 				<div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
 					{featuredArticles.map((article) => (
 						<Card
 							key={article.title}
-							className="overflow-hidden hover:shadow-xl transition-shadow"
+							className="overflow-hidden bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300"
 						>
 							<img
 								src={article.image}
@@ -70,37 +70,37 @@ const Featured = () => {
 										</AvatarFallback>
 									</Avatar>
 									<div>
-										<p className="font-semibold text-sm">
+										<p className="font-semibold text-sm text-slate-800">
 											{article.author}
 										</p>
-										<p className="text-xs text-gray-500">
+										<p className="text-xs text-slate-500">
 											{article.readTime}
 										</p>
 									</div>
 								</div>
-								<h3 className="text-xl font-bold mb-2">
-									{article.title}
+								<h3 className="text-xl font-bold mb-3 text-slate-900 hover:text-cyan-600 transition-colors">
+									<a href="#">{article.title}</a>
 								</h3>
 								<div className="flex flex-wrap gap-2 mb-4">
 									{article.tags.map((tag) => (
 										<span
 											key={tag}
-											className="bg-gray-100 text-gray-600 text-xs font-medium px-2.5 py-0.5 rounded-full"
+											className="bg-cyan-100 text-cyan-700 text-xs font-medium px-3 py-1 rounded-full"
 										>
 											{tag}
 										</span>
 									))}
 								</div>
 							</CardContent>
-							<CardFooter className="flex justify-between items-center">
-								<div className="flex space-x-4 text-gray-500">
-									<div className="flex items-center space-x-1">
-										<Heart className="h-4 w-4" />
-										<span>{article.likes}</span>
+							<CardFooter className="flex justify-between items-center bg-slate-50 p-6">
+								<div className="flex space-x-4 text-slate-500">
+									<div className="flex items-center space-x-1.5 hover:text-pink-500 transition-colors">
+										<Heart className="h-5 w-5" />
+										<span className="text-sm font-medium">{article.likes}</span>
 									</div>
-									<div className="flex items-center space-x-1">
-										<MessageSquare className="h-4 w-4" />
-										<span>{article.comments}</span>
+									<div className="flex items-center space-x-1.5 hover:text-cyan-600 transition-colors">
+										<MessageSquare className="h-5 w-5" />
+										<span className="text-sm font-medium">{article.comments}</span>
 									</div>
 								</div>
 								<Button variant="secondary" size="sm">
@@ -109,9 +109,6 @@ const Featured = () => {
 							</CardFooter>
 						</Card>
 					))}
-				</div>
-				<div className="text-center mt-12">
-					<Button variant="outline">View All Articles</Button>
 				</div>
 			</div>
 		</section>

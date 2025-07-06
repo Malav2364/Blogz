@@ -28,43 +28,40 @@ const writers = [
 
 const Writers = () => {
 	return (
-		<section className="py-16">
+		<section className="py-16 bg-slate-50">
 			<div className="container mx-auto px-4">
-				<h2 className="text-3xl font-bold text-center">
+				<h2 className="text-4xl font-bold text-center text-slate-900">
 					Meet Our Writers
 				</h2>
-				<p className="text-center text-gray-500 mt-2">
+				<p className="text-center text-slate-600 mt-2 mb-12">
 					Talented individuals sharing their expertise with the world
 				</p>
 				<div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
 					{writers.map((writer) => (
 						<Card
 							key={writer.name}
-							className="text-center p-6 hover:bg-gray-50 transition-colors"
+							className="text-center p-6 bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
 						>
-							<Avatar className="h-24 w-24 mx-auto">
+							<Avatar className="h-24 w-24 mx-auto ring-4 ring-slate-100">
 								<AvatarImage src={writer.avatar} />
 								<AvatarFallback>
 									{writer.name.slice(0, 2)}
 								</AvatarFallback>
 							</Avatar>
-							<h3 className="mt-4 text-xl font-semibold">
+							<h3 className="mt-5 text-xl font-semibold text-slate-900">
 								{writer.name}
 							</h3>
-							<p className="text-gray-500 text-sm">
+							<p className="text-slate-500 text-sm mb-4">
 								{writer.role}
 							</p>
 							<Button
 								variant="outline"
-								className="mt-4"
+								className="border-cyan-600 text-cyan-600 hover:bg-cyan-600 hover:text-white"
 							>
 								Follow
 							</Button>
 						</Card>
 					))}
-				</div>
-				<div className="text-center mt-12">
-					<Button variant="outline">View All Writers</Button>
 				</div>
 			</div>
 		</section>

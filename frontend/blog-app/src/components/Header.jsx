@@ -1,33 +1,35 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Search, Feather } from 'lucide-react';
 import Button from './ui/button';
 import { Input } from './ui/input';
 
 const Header = () => {
   return (
-    <header className="bg-white shadow-sm">
+    <header className="absolute top-0 left-0 right-0 z-10 bg-transparent text-white">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center space-x-8">
             <h1 className="text-2xl font-bold">BlogSpace</h1>
-            <nav className="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-500">
-              <a href="#" className="hover:text-gray-900">Home</a>
-              <a href="#" className="hover:text-gray-900">Explore</a>
-              <a href="#" className="hover:text-gray-900">Categories</a>
-              <a href="#" className="hover:text-gray-900">About</a>
+            <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+              <a href="#" className="hover:text-gray-200">Home</a>
+              <a href="#" className="hover:text-gray-200">Explore</a>
+              <a href="#" className="hover:text-gray-200">Categories</a>
+              <a href="#" className="hover:text-gray-200">About</a>
             </nav>
           </div>
           <div className="flex items-center space-x-4">
             <div className="relative hidden sm:block">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
-              <Input type="search" placeholder="Search articles..." className="pl-10 w-48" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-200" />
+              <Input type="search" placeholder="Search articles..." className="pl-10 w-48 bg-transparent border-gray-200 placeholder-gray-300" />
             </div>
-            <Button variant="outline">
+            <Button variant="outline" className="text-white border-white hover:bg-white hover:text-black">
               <Feather className="h-4 w-4 mr-2" />
               Write
             </Button>
-            <Button variant="ghost">Sign In</Button>
-            <Button>Sign Up</Button>
+            <Link to="/login">
+              <Button>Get Started</Button>
+            </Link>
           </div>
           <div className="md:hidden">
             <Button variant="ghost" size="icon">
