@@ -18,52 +18,7 @@ import {
   BookOpen
 } from "lucide-react";
 import { toast } from "react-hot-toast";
-
-// Mock data - replace with actual API calls
-const mockPosts = [
-  {
-    id: 1,
-    title: "Getting Started with React Hooks",
-    content: "A comprehensive guide to understanding and using React Hooks...",
-    category: "Technology & Innovation",
-    tags: ["react", "javascript", "hooks"],
-    status: "published",
-    createdAt: "2024-01-15",
-    updatedAt: "2024-01-15",
-    views: 1250,
-    likes: 89,
-    comments: 23,
-    coverImage: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=500"
-  },
-  {
-    id: 2,
-    title: "Modern CSS Techniques",
-    content: "Exploring the latest CSS features and best practices...",
-    category: "Technology & Innovation",
-    tags: ["css", "web-design", "frontend"],
-    status: "draft",
-    createdAt: "2024-01-10",
-    updatedAt: "2024-01-12",
-    views: 0,
-    likes: 0,
-    comments: 0,
-    coverImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500"
-  },
-  {
-    id: 3,
-    title: "The Future of Web Development",
-    content: "Predictions and trends shaping the future of web development...",
-    category: "Technology & Innovation",
-    tags: ["webdev", "future", "trends"],
-    status: "published",
-    createdAt: "2024-01-05",
-    updatedAt: "2024-01-08",
-    views: 2100,
-    likes: 156,
-    comments: 45,
-    coverImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500"
-  }
-];
+import { getUserPosts, deletePostById } from "../services/postService";
 
 const MyPosts = () => {
   const navigate = useNavigate();
@@ -74,15 +29,13 @@ const MyPosts = () => {
   const [sortBy, setSortBy] = useState("newest");
 
   useEffect(() => {
-    // Simulate API call
+    // Fetch actual posts from API
     const fetchPosts = async () => {
       setLoading(true);
       try {
-        // Replace with actual API call
-        setTimeout(() => {
-          setPosts(mockPosts);
-          setLoading(false);
-        }, 1000);
+        const data = await getUserPosts();
+        setPosts(data.posts || []);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching posts:", error);
         toast.error("Failed to fetch posts");
@@ -123,8 +76,8 @@ const MyPosts = () => {
   const handleDelete = async (postId) => {
     if (window.confirm("Are you sure you want to delete this post?")) {
       try {
-        // Replace with actual API call
-        setPosts(posts.filter(post => post.id !== postId));
+        await deletePostById(postId);
+        setPosts(posts.filter(post => post._id !== postId));
         toast.success("Post deleted successfully");
       } catch (error) {
         console.error("Error deleting post:", error);
@@ -287,7 +240,7 @@ const MyPosts = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredPosts.map((post, index) => (
             <motion.div
-              key={post.id}
+              key={post._id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}

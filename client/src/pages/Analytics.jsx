@@ -15,9 +15,9 @@ import {
   Target,
   Award
 } from "lucide-react";
-import BarChart from "../components/BarChart";
-import LineChart from "../components/LineChart";
-import PieChart from "../components/PieChart";
+import BarChart from "../components/SimpleBarChart";
+import LineChart from "../components/SimpleLineChart";
+import PieChart from "../components/SimplePieChart";
 
 // Mock data - replace with actual API calls
 const mockAnalytics = {

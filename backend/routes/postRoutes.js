@@ -7,6 +7,7 @@ import cloudinary from '../config/cloudinaryConfig.js';
 import {
   createPost,
   getAllPosts,
+  getUserPosts,
   getPostById,
   updatePost,
   deletePost,
@@ -52,6 +53,7 @@ router.post('/upload-image', protect, upload.single('image'), async (req, res, n
 
 // Post routes
 router.route('/').get(getAllPosts).post(protect, checkBanStatus, validate(schemas.createPost), createPost);
+router.route('/my-posts').get(protect, getUserPosts);
 router.route('/:id').get(getPostById).put(protect, validate(schemas.updatePost), updatePost).delete(protect, deletePost);
 router.route('/:id/like').patch(protect, checkBanStatus, toggleLike);
 

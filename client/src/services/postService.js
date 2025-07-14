@@ -33,6 +33,18 @@ export const updatePostById = async (id, postData) => {
 };
 
 export const toggleLikePost = async (postId) => {
-  const res = await axiosInstance.patch(`/api/posts/${postId}/like`);
-  return res.data;
+  const response = await axiosInstance.patch(`/api/posts/${postId}/like`);
+  return response;
+};
+
+// Get user's own posts
+export const getUserPosts = async () => {
+  const response = await axiosInstance.get('/api/posts/my-posts');
+  return response;
+};
+
+// Get all posts for public viewing
+export const getAllPosts = async () => {
+  const response = await axiosInstance.get('/api/posts');
+  return response;
 };

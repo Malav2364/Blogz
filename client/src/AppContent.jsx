@@ -22,31 +22,36 @@ import PublicBlogDetail from "./pages/PublicBlogDetail";
 import AuthorPage from "./pages/AuthorPage";
 import Profile from "./pages/Profile";
 import MyPosts from "./pages/MyPosts";
+import AllBlogs from "./pages/AllBlogs";
 import Analytics from "./pages/Analytics";
 import AdminUsers from "./components/Admin/AdminUsers";
 
 const AppContent = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // Removed unused user variable
 
   useEffect(() => {
     const fetchProfile = async () => {
       try {
         const user = await getProfile();
         dispatch(setCredentials({ user }));
-
-        if (user.role === "admin") {
-          navigate("/admin", { replace: true });
-        } else if (user.role === "user") {
-          navigate("/dashboard", { replace: true });
+        
+        // Only redirect if we're on the home page or login/register pages
+        const currentPath = window.location.pathname;
+        if (currentPath === "/" || currentPath === "/login" || currentPath === "/register") {
+          if (user.role === "admin") {
+            navigate("/admin", { replace: true });
+          } else if (user.role === "user") {
+            navigate("/dashboard", { replace: true });
+          }
         }
       } catch (error) {
         console.log("Not logged in or session expired", error);
       }
     };
     fetchProfile();
-  }, [dispatch, navigate]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Remove dispatch and navigate from dependencies to prevent re-running
 
   return (
     <Routes>
@@ -68,6 +73,7 @@ const AppContent = () => {
         <Route path="edit-post/:id" element={<EditPost />} />
         <Route path="explore" element={<ExplorePrivate />} />
         <Route path="my-posts" element={<MyPosts />} />
+        <Route path="all-blogs" element={<AllBlogs />} />
         <Route path="analytics" element={<Analytics />} />
         <Route path="blog/:id" element={<BlogDetail />} />
         <Route path="author/:id" element={<AuthorPage />} />

@@ -19,7 +19,8 @@ import {
   BookOpen,
   TrendingUp,
   Users,
-  BarChart3
+  BarChart3,
+  Globe
 } from "lucide-react";
 import NotificationDropdown from "../components/NotificationDropdown";
 
@@ -28,6 +29,7 @@ const navItems = [
   { label: "Explore", path: "/dashboard/explore", icon: Search },
   { label: "Create Story", path: "/dashboard/create", icon: PenTool },
   { label: "My Stories", path: "/dashboard/my-posts", icon: BookOpen },
+  { label: "All Blogs", path: "/dashboard/all-blogs", icon: Globe },
   { label: "Analytics", path: "/dashboard/analytics", icon: BarChart3 },
   { label: "Profile", path: "/dashboard/profile", icon: User },
 ];
