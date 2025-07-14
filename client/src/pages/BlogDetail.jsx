@@ -149,7 +149,7 @@ const BlogDetail = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative">
       <Helmet>
-        <title>{post.title} - BlogSmithery</title>
+        <title>{post.title} - WriteWave</title>
         <meta name="description" content={post.content.replace(/<[^>]*>/g, '').substring(0, 155)} />
       </Helmet>
 

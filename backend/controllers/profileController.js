@@ -57,7 +57,7 @@ export const updateUserProfile = async (req, res) => {
     // Handle profile image upload
     if (req.file) {
       const upload = await cloudinary.uploader.upload(req.file.path, {
-        folder: "blogsmithery-profiles",
+        folder: "writewave-profiles",
         transformation: [{ width: 512, height: 512, crop: "fill" }],
       });
       await fs.unlink(req.file.path);

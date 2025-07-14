@@ -51,7 +51,7 @@ const Register = () => {
         password: formData.password
       });
       dispatch(setCredentials({ user }));
-      toast.success("Welcome to BlogSmithery! 🎉");
+      toast.success("Welcome to WriteWave! 🎉");
       navigate("/dashboard");
     } catch (error) {
       toast.error(error.response?.data?.message || "Registration failed");
@@ -130,7 +130,7 @@ const Register = () => {
             >
               <Sparkles className="w-8 h-8 text-white" />
             </motion.div>
-            <h1 className="text-3xl font-bold text-white mb-2">Join BlogSmithery</h1>
+            <h1 className="text-3xl font-bold text-white mb-2">Join WriteWave</h1>
             <p className="text-slate-300">Start your writing journey today</p>
           </div>
 

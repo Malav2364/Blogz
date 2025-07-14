@@ -1,8 +1,8 @@
-# BLOGZ
+# WriteWave
 
-_Unleash Creativity, Publish Seamlessly, Inspire Globally_
+_Where Stories Come Alive - Unleash Creativity, Publish Seamlessly, Inspire Globally_
 
-**Blogz** is an all-in-one platform for developers and writers to create, manage, and publish dynamic blog content with ease. Built using modern web technologies, Blogz provides a rich editing experience, role-based permissions, analytics, and a beautiful user interface.
+**WriteWave** is an all-in-one platform for developers and writers to create, manage, and publish dynamic blog content with ease. Built using modern web technologies, WriteWave provides a rich editing experience, role-based permissions, analytics, and a beautiful user interface.
 
 ---
 
@@ -23,7 +23,7 @@ _Unleash Creativity, Publish Seamlessly, Inspire Globally_
 
 ## 📌 Overview
 
-Blogz aims to simplify building scalable blogging platforms. Its core features include:
+WriteWave aims to simplify building scalable blogging platforms. Its core features include:
 
 - **Rich Text Editor**: Create and format content with media uploads and advanced styling.
 - **Role-Based Access**: Secure routes and permissions for users, admins, and authors.
@@ -85,7 +85,7 @@ Blogz aims to simplify building scalable blogging platforms. Its core features i
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/Malav2364/Blogz.git
+   git clone https://github.com/Malav2364/WriteWave.git
    ```
 
 2. **Navigate to the project directory:**

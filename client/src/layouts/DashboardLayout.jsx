@@ -96,8 +96,8 @@ const DashboardLayout = () => {
                 <Sparkles className="w-7 h-7 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-white">BlogSmithery</h1>
-                <p className="text-sm text-slate-400">Creative Writing Hub</p>
+                <h1 className="text-2xl font-bold text-white">WriteWave</h1>
+                <p className="text-sm text-slate-400">Where Stories Come Alive</p>
               </div>
             </motion.div>
           </div>

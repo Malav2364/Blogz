@@ -32,7 +32,7 @@ router.post('/upload-image', protect, upload.single('image'), async (req, res, n
 
   try {
     const result = await cloudinary.uploader.upload(req.file.path, {
-      folder: 'blogsmithery-posts',
+      folder: 'writewave-posts',
       transformation: [{ width: 1024, crop: 'limit' }],
     });
 

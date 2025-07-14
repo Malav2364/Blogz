@@ -1,4 +1,5 @@
 import React from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -15,7 +16,7 @@ const Hero = () => {
         transition={{ duration: 0.6 }}
       >
         <h1 className="text-4xl lg:text-5xl font-bold text-[#1C2B33] outfit">
-          Welcome to <span className="text-[#00838F]">Blog Smithery</span>
+          Welcome to <span className="text-[#00838F]">WriteWave</span>
         </h1>
 
         <p className="text-[#37474F] text-lg max-w-xl mx-auto md:mx-0">
@@ -56,7 +57,7 @@ const Hero = () => {
       >
         <img
           src="/homeright.png"
-          alt="Blogsmithery dashboard preview"
+          alt="WriteWave dashboard preview"
           className="w-full max-w-sm md:max-w-md lg:max-w-lg rounded-xl shadow-lg"
         />
       </motion.div>

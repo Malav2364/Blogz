@@ -87,7 +87,7 @@ function Home() {
           <div className="w-10 h-10 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-xl flex items-center justify-center">
             <Sparkles className="w-6 h-6 text-white" />
           </div>
-          <span className="text-2xl font-bold text-white">BlogSmithery</span>
+          <span className="text-2xl font-bold text-white">WriteWave</span>
         </div>
 
         <div className="hidden md:flex items-center space-x-8">
@@ -274,7 +274,7 @@ function Home() {
               </span>
             </h2>
             <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-              Join thousands of writers who are already creating amazing content with BlogSmithery.
+              Join thousands of writers who are already creating amazing content with WriteWave.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
